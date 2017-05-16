@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head.ejs %>
+  </head>
+  <body>
+    <% include partials/header.ejs %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm6">
+          <h1>List of Shortened Links</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Original Link</th>
+                <th>Shortened Link</th>
+                <th>Click Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let hitung = 1;
+                url.forEach(url => {
+                %>
+                <tr>
+                  <th><%- hitung %></th>
+                  <th><%- url.link %></th>
+                  <th><a href="/s/<%- url.url_short %>"><%- url.url_short %></a></th>
+                  <th><%- url.click_count %></th>
+                </tr>
+              <%
+                hitung ++
+                }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <% include partials/footer.ejs %>
+  </body>
+</html>

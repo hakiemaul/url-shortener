@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const db = require('../models');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  db.Url.findAll({
+    order: [['createdAt', 'ASC']]
+  })
+  .then(urls => {
+    res.render('links', { url: urls });
+  })
 });
 
 module.exports = router;

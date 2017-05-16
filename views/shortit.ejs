@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include partials/head.ejs %>
+  </head>
+  <body>
+    <% include partials/header.ejs %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Shorten Now!</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <form method="post">
+            <input type="text" name="link" placeholder="Links Here">
+            <button type="submit" name="button">Shorten</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <% if(url !== null) { %>
+            <h2>Your shortened url is <a href="/s/<%- url %>">short-url-hakiem.herokuapp/s/<%- url %></a></h2>
+            <a class="btn btn-success btn-lg daftar" href="/links" role="button">View Other Shortened Links</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <% include partials/footer.ejs %>
+  </body>
+</html>

@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include partials/head.ejs %>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <% include partials/header.ejs %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Welcome to Links Shortener</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <a class="btn btn-primary btn-lg daftar" href="/shortit" role="button">Shorten Your Link Now</a>
+          <a class="btn btn-success btn-lg daftar" href="/links" role="button">View Shortened Links</a>
+        </div>
+      </div>
+    </div>
+    <% include partials/footer.ejs %>
   </body>
 </html>
